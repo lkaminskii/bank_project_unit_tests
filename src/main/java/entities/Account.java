@@ -42,9 +42,9 @@ public class Account {
         }
     }
 
-    public void transfer (Account sourceAcc, double amount, Account destinationAcc) throws OperationException {
+    public void transfer (double amount, Account destinationAcc) {
+        this.balance -= amount;
         destinationAcc.setBalance(destinationAcc.getBalance() + amount);
-        sourceAcc.setBalance(sourceAcc.getBalance() - amount);
     }
 
     @Override
